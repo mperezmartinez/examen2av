@@ -20,18 +20,12 @@ public class StatusTwitter {
      * @throws twitter4j.TwitterException
      */
     public static void main(String[] args) throws TwitterException {
-
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("*********************")
-                .setOAuthConsumerSecret("******************************************")
-                .setOAuthAccessToken("**************************************************")
-                .setOAuthAccessTokenSecret("******************************************");
-        TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter = tf.getInstance();
-
+        
+     
+        Twitter mitwitter = new TwitterFactory().getInstance();
+ 
         Query query = new Query("#Cangas");
-        QueryResult result = twitter.search(query);
+        QueryResult result = mitwitter.search(query);
         for (Status status : result.getTweets()) {
             System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
         }
