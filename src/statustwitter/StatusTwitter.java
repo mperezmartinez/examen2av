@@ -18,6 +18,7 @@ public class StatusTwitter {
      * @throws twitter4j.TwitterException
      */
     public static void main(String[] args) throws TwitterException {
+        
      
         Twitter mitwitter = new TwitterFactory().getInstance();
  
