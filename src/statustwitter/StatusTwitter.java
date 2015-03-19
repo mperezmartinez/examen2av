@@ -23,17 +23,17 @@ public class StatusTwitter {
 
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("*********************")
-                .setOAuthConsumerSecret("******************************************")
-                .setOAuthAccessToken("**************************************************")
-                .setOAuthAccessTokenSecret("******************************************");
+                .setOAuthConsumerKey("************************")
+                .setOAuthConsumerSecret("*********************************************")
+                .setOAuthAccessToken("***********************************************")
+                .setOAuthAccessTokenSecret("**********************************************");
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter = tf.getInstance();
 
         Query query = new Query("#Cangas");
         QueryResult result = twitter.search(query);
         for (Status status : result.getTweets()) {
-            System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+           System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
         }
     }
 }
